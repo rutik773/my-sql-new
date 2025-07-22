@@ -39,4 +39,5 @@ UPDATE emp SET name = 'harshu' WHERE id = 1;
 UPDATE emp SET dept = 'it' WHERE dept IS NULL;
 
 -- Updating all employees' city to 'Pune'
-UPDATE emp SET city = 'pune';
+UPDATE emp SET city = 'pune'; 
+ruitk 
