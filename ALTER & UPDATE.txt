@@ -1,0 +1,42 @@
+
+ALTER QUERIES:
+-- Adding a new column 'city' of type VARCHAR(50) to the emp table
+ALTER TABLE emp ADD COLUMN city VARCHAR(50);
+
+-- Adding a new column 'age' with a default value of 20
+ALTER TABLE emp ADD COLUMN age INT DEFAULT 20;
+
+-- Modifying the 'age' column to have a default value of 18
+ALTER TABLE emp MODIFY COLUMN age INT DEFAULT 18;
+
+-- Changing the datatype of 'name' to VARCHAR(50)
+ALTER TABLE emp MODIFY COLUMN name VARCHAR(50);
+
+-- Making the 'name' column NOT NULL
+ALTER TABLE emp MODIFY COLUMN name VARCHAR(50) NOT NULL;
+
+-- Modifying the 'salary' column to be NOT NULL with a default value of 5000
+ALTER TABLE emp MODIFY salary FLOAT NOT NULL DEFAULT 5000;
+
+-- Dropping the 'phoneno' column from the emp table
+ALTER TABLE emp DROP COLUMN phoneno;
+
+-- Renaming the emp table to EMPLOYEE
+ALTER TABLE emp RENAME TO EMPLOYEE;
+
+-- Renaming the 'DEPARTMENT' column to 'dept'
+ALTER TABLE EMPLOYEE RENAME COLUMN DEPARTMENT TO dept;
+
+
+UPDATE QUERIES
+-- Updating the name from 'harshu' to 'harsh'
+UPDATE emp SET name = 'harsh' WHERE name = 'harshu';
+
+-- Updating the name to 'harshu' for the employee with ID = 1
+UPDATE emp SET name = 'harshu' WHERE id = 1;
+
+-- Updating the department to 'IT' where dept is NULL
+UPDATE emp SET dept = 'it' WHERE dept IS NULL;
+
+-- Updating all employees' city to 'Pune'
+UPDATE emp SET city = 'pune';

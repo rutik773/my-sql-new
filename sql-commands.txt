@@ -1,0 +1,89 @@
+
+## 🟢 **Basic SQL Commands (DQL - Data Query Language)**
+
+1. `SELECT * FROM table_name;`
+2. `SELECT column1, column2 FROM table_name;`
+3. `SELECT DISTINCT column FROM table_name;`
+4. `SELECT COUNT(*) FROM table_name;`
+5. `SELECT column1 FROM table WHERE column2 = 'value';`
+6. `SELECT * FROM table WHERE column BETWEEN val1 AND val2;`
+7. `SELECT * FROM table WHERE column IN ('val1', 'val2');`
+8. `SELECT * FROM table WHERE column IS NULL;`
+9. `SELECT * FROM table ORDER BY column ASC|DESC;`
+10. `SELECT column, COUNT(*) FROM table GROUP BY column;`
+
+---
+
+## 🟡 **Filtering and Aggregation**
+
+11. `SELECT AVG(column) FROM table;`
+12. `SELECT MIN(column), MAX(column) FROM table;`
+13. `SELECT SUM(column) FROM table;`
+14. `SELECT column, COUNT(*) FROM table GROUP BY column HAVING COUNT(*) > 1;`
+15. `SELECT * FROM table WHERE column LIKE 'A%';`
+
+---
+
+## 🧱 **DDL (Data Definition Language)**
+
+16. `CREATE DATABASE db_name;`
+17. `DROP DATABASE db_name;`
+18. `CREATE TABLE table_name (id INT PRIMARY KEY, name VARCHAR(50));`
+19. `ALTER TABLE table_name ADD column_name datatype;`
+20. `ALTER TABLE table_name DROP COLUMN column_name;`
+21. `DROP TABLE table_name;`
+22. `TRUNCATE TABLE table_name;`
+23. `RENAME TABLE old_name TO new_name;`
+24. `CREATE INDEX idx_name ON table(column);`
+25. `DROP INDEX idx_name;` *(may vary by DBMS)*
+
+---
+
+## 🛠️ **DML (Data Manipulation Language)**
+
+26. `INSERT INTO table_name (col1, col2) VALUES ('val1', 'val2');`
+27. `INSERT INTO table_name VALUES (val1, val2, val3);`
+28. `UPDATE table_name SET col1 = 'val' WHERE id = 1;`
+29. `DELETE FROM table_name WHERE condition;`
+30. `MERGE INTO target_table USING source_table ON condition WHEN MATCHED THEN UPDATE ... WHEN NOT MATCHED THEN INSERT ...;` *(SQL Server, Oracle)*
+
+---
+
+## 🔗 **Joins (Key for Cloud Logs, Monitoring, Multi-table queries)**
+
+31. `SELECT * FROM A INNER JOIN B ON A.id = B.id;`
+32. `SELECT * FROM A LEFT JOIN B ON A.id = B.id;`
+33. `SELECT * FROM A RIGHT JOIN B ON A.id = B.id;`
+34. `SELECT * FROM A FULL OUTER JOIN B ON A.id = B.id;`
+35. `SELECT * FROM A CROSS JOIN B;`
+36. `SELECT * FROM A JOIN B ON A.id = B.id WHERE B.status = 'active';`
+
+---
+
+## 🧠 **Subqueries & Views**
+
+37. `SELECT * FROM table WHERE id IN (SELECT id FROM other_table WHERE ...);`
+38. `SELECT name, (SELECT COUNT(*) FROM logs WHERE logs.user_id = users.id) AS log_count FROM users;`
+39. `CREATE VIEW active_users AS SELECT * FROM users WHERE status = 'active';`
+40. `DROP VIEW active_users;`
+
+---
+
+## 🔐 **User & Access Control (especially for DevOps & Cloud DBs)**
+
+41. `CREATE USER 'username'@'host' IDENTIFIED BY 'password';`
+42. `GRANT ALL PRIVILEGES ON db_name.* TO 'username'@'host';`
+43. `REVOKE SELECT ON db_name.table FROM 'username'@'host';`
+44. `FLUSH PRIVILEGES;`
+
+---
+
+## ☁️ **Cloud/DevOps-Relevant Queries**
+
+45. `SELECT * FROM logs WHERE log_time > NOW() - INTERVAL 1 DAY;`
+46. `SELECT * FROM events WHERE source_ip = 'x.x.x.x';`
+47. `SELECT COUNT(*) FROM metrics WHERE status_code = 500;`
+48. `SELECT service_name, AVG(response_time) FROM logs GROUP BY service_name;`
+49. `SELECT * FROM backup_status WHERE last_backup < NOW() - INTERVAL 1 WEEK;`
+50. `SELECT * FROM cron_jobs WHERE next_run < NOW();`
+

@@ -1,0 +1,20 @@
+Create Foreign key -
+Create a table students and courses
+make id col in students as primary key
+link that to student id col in courses table
+create table studetns(id int primary key auto_increment , name
+varchar(50),email varchar (100));
+INSERT INTO students (id,name,email)values(6,'roshan' ,’vaishnavi@20);
+create table courses(id int primary key auto_increment, studentid int ,
+courseid int , coursename varchar(50),credits int ,foreign key (studentid)
+references students(id));
+INSERT INTO courses (studentid, courseid, coursename, credits) VALUES (4,
+3, 'physics', 6);
+#delete foreign key constraint;
+alter table courses drop constraint courses_ibfk_1;
+
+SQL-BACKUP
+mysqldump -u root -p facebook>facebook.sql ;
+->backup files in from sql to linux;
+mysqldump -u root -p snapchat<facebook.sql ;
+->restore files again snapchat is newly created empty db

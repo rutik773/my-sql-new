@@ -1,0 +1,11 @@
+1.sudo yum install mariadb105-server -y    
+2.sudo service mariadb start   
+3.sudo mysql    // Log  in to MariaDB without a password (default) 
+4.ALTER USER 'root'@'localhost' IDENTIFIED BY 'Pass@123';    //Change the root password (make sure to use single quotes correctly) 
+5.sudo mysql -u root -p  // Exit and log in with the new password 
+6.create database databasename;   
+7.show databases;   
+8.use databasename;  // Switch to the newly created database 
+9.create table  tablename (id INT, name VARCHAR(30));  //Create a table with columns 'id' and 'name' 
+10. Show tables;  
+11. describe tablename;     // Describe the structure of a specific table

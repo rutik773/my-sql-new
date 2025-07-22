@@ -1,0 +1,7 @@
+
+ALTER TABLE emp MODIFY COLUMN id int primary key;
+ALTER TABLE emp MODIFY COLUMN id int auto_increment;
+ALTER TABLE emp MODIFY COLUMN id int primary key auto_increment;
+ALTER TABLE emp add constraint myunique unique (name);
+ALTER TABLE emp DROP PRIMARY KEY;
+ALTER TABLE emp DROP CONSTRAINT myunique;

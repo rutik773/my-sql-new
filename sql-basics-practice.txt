@@ -1,0 +1,63 @@
+# 📘 SQL Basics – One Page Summary
+
+This file contains simple SQL theory and practice queries for beginners.
+
+---
+
+## 📚 SQL Command Types
+
+1. **DDL (Data Definition Language)** – Defines the structure of a database  
+   - `CREATE`, `ALTER`, `DROP`
+
+2. **DML (Data Manipulation Language)** – Manages data inside tables  
+   - `INSERT`, `UPDATE`, `DELETE`
+
+3. **DQL (Data Query Language)** – Retrieves data  
+   - `SELECT`
+
+4. **DCL (Data Control Language)** – Controls access  
+   - `GRANT`, `REVOKE`
+
+5. **TCL (Transaction Control Language)** – Manages transactions  
+   - `COMMIT`, `ROLLBACK`
+
+---
+
+## 🧱 Sample Table Creation (DDL)
+
+```sql
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  course VARCHAR(50)
+);
+
+
+-------------------------------------------------------------------------------------------
+Data Manipulation (DML)
+
+-- Insert records
+INSERT INTO students (id, name, age, course)
+VALUES (1, 'Harshada', 21, 'Computer Science');
+
+-- Update a record
+UPDATE students SET age = 22 WHERE id = 1;
+
+-- Delete a record
+DELETE FROM students WHERE id = 1;
+
+-------------------------------------------------------------------------------------------
+Data Retrieval (DQL)
+
+-- View all students
+SELECT * FROM students;
+
+-- Filter by course
+SELECT * FROM students WHERE course = 'Computer Science';
+
+-- Sort by name
+SELECT * FROM students ORDER BY name ASC;
+
+
+

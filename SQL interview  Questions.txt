@@ -1,0 +1,131 @@
+ 🔹 **Basic SQL Questions**
+1. **What is SQL?**
+   SQL (Structured Query Language) is a standard language used to manage and manipulate relational databases.
+
+2. **What are the different types of SQL statements?**
+   * **DDL**: Data Definition Language (`CREATE`, `ALTER`, `DROP`)
+   * **DML**: Data Manipulation Language (`INSERT`, `UPDATE`, `DELETE`)
+   * **DCL**: Data Control Language (`GRANT`, `REVOKE`)
+   * **TCL**: Transaction Control Language (`COMMIT`, `ROLLBACK`, `SAVEPOINT`)
+   * **DQL**: Data Query Language (`SELECT`)
+
+3. **What is the difference between `DELETE`, `TRUNCATE`, and `DROP`?**
+   * `DELETE`: Deletes specific rows, can be rolled back, uses `WHERE` clause.
+   * `TRUNCATE`: Removes all rows, faster than `DELETE`, can't be rolled back.
+   * `DROP`: Deletes the entire table structure and data.
+
+4. **What is a primary key? Can a table have multiple primary keys?**
+   A primary key uniquely identifies each row in a table. A table can have only one primary key, but it can consist of multiple columns (composite key).
+
+5. **What is a foreign key?**
+   A foreign key is a column that creates a relationship between two tables by referencing the primary key of another table.
+
+6. **What are constraints in SQL? Name a few.**
+   Constraints enforce rules on data. Examples:
+
+   * `NOT NULL`
+   * `UNIQUE`
+   * `PRIMARY KEY`
+   * `FOREIGN KEY`
+   * `CHECK`
+   * `DEFAULT`
+
+7. **What is the difference between `WHERE` and `HAVING` clause?**
+   * `WHERE` is used to filter rows before grouping.
+   * `HAVING` is used to filter groups after `GROUP BY`.
+
+8. **What is the difference between `INNER JOIN` and `OUTER JOIN`?**
+   * `INNER JOIN`: Returns only matching rows from both tables.
+   * `OUTER JOIN`: Returns matching rows + unmatched rows from one or both tables (`LEFT`, `RIGHT`, `FULL OUTER JOIN`).
+
+9. **What is normalization?**
+   Normalization is the process of organizing data to reduce redundancy and improve data integrity.
+
+10. **What are the different normal forms?**
+* 1NF: No repeating groups.
+* 2NF: 1NF + no partial dependency.
+* 3NF: 2NF + no transitive dependency.
+* BCNF: Stronger version of 3NF.
+
+---
+
+🔹 **Intermediate SQL Questions**
+11. **What is a `JOIN`? List types.**
+    A `JOIN` is used to combine rows from two or more tables. Types:
+
+* `INNER JOIN`
+* `LEFT JOIN`
+* `RIGHT JOIN`
+* `FULL OUTER JOIN`
+* `CROSS JOIN`
+* `SELF JOIN`
+
+12. **What is the difference between `UNION` and `UNION ALL`?**
+* `UNION`: Combines result sets and removes duplicates.
+* `UNION ALL`: Combines result sets including duplicates.
+
+13. **What is a subquery?**
+    A subquery is a query nested inside another query. It can return single or multiple values.
+
+14. **What is the use of `GROUP BY` clause?**
+    `GROUP BY` groups rows with the same values in specified columns and allows aggregate functions like `COUNT`, `SUM`, etc.
+
+15. **What is an index? Why is it used?**
+    An index improves the speed of data retrieval from a table. It works like a book's index.
+
+16. **What is a view in SQL?**
+    A view is a virtual table based on the result set of an SQL query.
+
+17. **What is the difference between `CHAR` and `VARCHAR`?**
+
+* `CHAR(n)`: Fixed-length string.
+* `VARCHAR(n)`: Variable-length string up to n characters.
+
+18. **What is ACID in SQL?**
+    Properties that ensure reliable transactions:
+
+* **A**tomicity
+* **C**onsistency
+* **I**solation
+* **D**urability
+
+19. **What are aggregate functions in SQL?**
+    Functions that operate on a set of values: `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
+
+20. **What is the difference between `IS NULL` and `= NULL`?**
+    `IS NULL` checks if a value is NULL.
+    `= NULL` is incorrect; NULL can't be compared with `=`, use `IS NULL`.
+
+---
+
+🔹 **Advanced or Scenario-Based Questions**
+
+21. **Can we use `ORDER BY` in a subquery?**
+    Yes, but usually the outer query determines the final sorting.
+
+22. **What is a correlated subquery?**
+    A subquery that references a column from the outer query. It runs once per outer row.
+
+23. **How can you find duplicate records in a table?**
+
+```sql
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > 1;
+```
+
+24. **How can you get the second highest salary from a table?**
+
+```sql
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+```
+
+25. **What is the difference between `RANK()` and `DENSE_RANK()`?**
+
+* `RANK()`: Leaves gaps after ties.
+* `DENSE_RANK()`: No gaps in ranking after ties.
+
+----

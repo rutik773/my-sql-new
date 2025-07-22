@@ -1,0 +1,31 @@
+-- Selecting minimum salary from the emp table
+SELECT MIN(salary) FROM emp;
+
+-- Selecting maximum salary from the emp table
+SELECT MAX(salary) FROM emp;
+
+-- Calculating the average salary of all employees
+SELECT AVG(salary) FROM emp;
+
+-- Calculating the average salary for employees whose name starts with 'r'
+SELECT AVG(salary) FROM emp WHERE name LIKE 'r%';
+
+-- Calculating the total sum of all salaries
+SELECT SUM(salary) FROM emp;
+
+-- SELECT name, salary FROM emp WHERE salary = (SELECT MIN(salary) FROM
+emp WHERE department = 'hr');
+
+-- Selecting the name of the employee with the minimum salary
+SELECT name FROM emp WHERE salary = (SELECT MIN(salary) FROM emp);
+
+-- Selecting the name and salary of the employee with the minimum salary
+SELECT name, salary FROM emp WHERE salary = (SELECT MIN(salary) FROM
+emp);
+
+-- Calculating the total salary paid in the IT department
+SELECT SUM(salary) FROM emp WHERE department = 'it';
+
+-- Selecting salary and name of employees in the IT department earning more than
+1000
+SELECT salary, name FROM emp WHERE department = 'it' AND salary > 1000;

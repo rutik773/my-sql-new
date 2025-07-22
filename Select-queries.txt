@@ -1,0 +1,53 @@
+insert into users values (1,'harshad' ,shirdi',vaishnavi@2 ,'22') ;
+
+ select * from users ;
+
+ insert into users(name,id,age,city) values ('ravina',2,25,'mumbai') ;
+
+ select id,name,city from users ;
+
+ select name,city from users ;
+
+ select city as address from users ;
+
+ select name as username from users ;
+
+ select * from users where name ='bunny' ;
+
+ select name from users where city ='mumbai' ;
+
+ select * from users where city ='pune' ;
+
+ select * from users where age>30;
+
+ select * from users where age<30 and city ='mumbai';
+
+ select * from users where email is null;
+
+ select * from users where email is not null;
+
+ select * from users where city!='mumbai';
+
+ select * from users where age>=25 and age<=35;
+
+ select * from users limit 3;
+
+ select * from users limit 3 offset 4;
+
+ select * from users order by id;
+
+ select * from users order by name;
+
+ select * from users order by id desc;
+
+ select * from users order by name desc ;
+
+ select * from users order by name desc ;
+
+ select * from users where name like 'r%';
+
+ select * from users where name like '%i';
+
+ select * from users where name like '%i%';
+
+ select * from users where name like '____';
